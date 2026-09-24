@@ -34,4 +34,3 @@ cd backend && pytest
 * Local AI first; cloud AI only as fallback.
 * Keep AI providers behind a common interface.
 * Don't add dependencies without need.
-* Don't modify unrelated files. 
