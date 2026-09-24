@@ -1,19 +1,37 @@
-# OpenChat
-- Frontend: Next.js 16, React 19, Typescript 7, Tailwind CSS 4, shadcn/ui in frontend/ 
-- Backend: FastAPI, Python 3.13, using python uv, ruff, pytest in backend/
-- AI: Ollama at localhost:11434, model qwen3.5:2b , Local AI APIs
-- AI: OpenAI or Anthropic AI or Gemini Cloud AI APIs (fallback)
-- Start Frontend: (port 3000)
-cd frontend/
-npm run dev
-- Start Backend: (port 8000)
-cd backend/
-uv run fastapi dev
-- Install Backend Dependancies: uv add <package_name>
-- uv sync (if project clone)
-- Install Frontend Dependancies: npm install <package_name>
-- Test: cd backend && pytest
+# Meet — AGENTS.md
 
-# Rules
-- Never commit .env or API keys
-- Run the tests after every change
+Full-stack AI app. Read this before coding.
+
+## Stack
+
+* Frontend: Next.js 16, React 19, TypeScript 7, Tailwind 4, shadcn/ui
+* Backend: FastAPI, Python 3.13, uv, Ruff, pytest
+* Local AI: Ollama (`localhost:11434`) — `gemma3:1b`
+* Cloud fallback: OpenAI, Anthropic, Grok, Gemini
+
+## Commands
+
+```bash
+# Frontend
+cd frontend && npm install && npm run dev   # :3000
+
+# Backend
+cd backend && uv sync && uv run fastapi dev # :8000
+
+# Test
+cd backend && pytest
+```
+
+## Rules
+
+* Follow existing patterns; keep changes small.
+* TypeScript frontend; typed Python backend.
+* Run tests after every change.
+* Add/update tests for changed behavior.
+* Run Ruff on backend changes.
+* Never commit `.env`, API keys, or secrets.
+* Never expose AI/API keys to frontend.
+* Local AI first; cloud AI only as fallback.
+* Keep AI providers behind a common interface.
+* Don't add dependencies without need.
+* Don't modify unrelated files. 
